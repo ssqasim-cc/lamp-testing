@@ -19,8 +19,10 @@ services:
   
     volumes:
       - ./dbdata:/var/lib/mysql
+    env_file:
+      - .env  
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: test
-      MYSQL_PASSWORD: test123
-      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: $ROOTPASSWORD
+      MYSQL_USER: $USERNAME
+      MYSQL_PASSWORD: $PASSWORD
+      
