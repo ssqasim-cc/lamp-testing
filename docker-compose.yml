@@ -1,0 +1,26 @@
+version: '3.0'
+
+services:
+  web-server: 
+    build: .
+    ports:
+      - 8000:80
+    env_file:
+      - .env
+    links:
+      - mydb
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mydb
+  
+  mydb:
+    image: mysql:5.6
+  
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test123
+      MYSQL_DATABASE: test
