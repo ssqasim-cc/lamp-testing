@@ -22,7 +22,8 @@ services:
     env_file:
       - .env  
     environment:
-      MYSQL_ROOT_PASSWORD: $ROOTPASSWORD
-      MYSQL_USER: $USERNAME
-      MYSQL_PASSWORD: $PASSWORD
+      MYSQL_ROOT_PASSWORD: asdf12@
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test123
+      MYSQL_DATABASE: testdb
       
